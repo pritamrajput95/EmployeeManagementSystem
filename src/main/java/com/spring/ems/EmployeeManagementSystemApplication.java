@@ -10,6 +10,8 @@ public class EmployeeManagementSystemApplication {
 		SpringApplication.run(EmployeeManagementSystemApplication.class, args);
 		System.out.println("EmployeeManagementSystemApplication.main()");
 		System.out.println("Main App");
+		System.out.println("Main App2");
+
 	}
 
 }
