@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.apache.log4j.Logger;
 
 import com.spring.ems.beans.User;
 import com.spring.ems.helper.Message;
@@ -20,6 +21,8 @@ import com.spring.ems.repository.UserRepository;
 
 @Controller
 public class HomeController {
+
+	private static final Logger LOGGER = Logger.getLogger(HomeController.class);
 
 	@Autowired
 	private BCryptPasswordEncoder passwardEncoder;
@@ -29,32 +32,35 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public String home(Model model) {
-		model.addAttribute("title", "Home - Smart Contact Manager");
-		
+		model.addAttribute("title", "Home - EMS");
 		System.out.println("home page called....");
+       LOGGER.info("@@@@@@@@@@@@@@@@@@");
 		return "home";
 	}
 
 	@RequestMapping("/about")
 	public String about(Model model) {
-		model.addAttribute("title", "about - Smart Contact Manager");
+		model.addAttribute("title", "about - EMS");
 		System.out.println("about page called....");
+		
 		return "about";
 	}
 	
 	@RequestMapping("/contact")
 	public String contact(Model model) {
-		model.addAttribute("title", "contact - Smart Contact Manager");
+		model.addAttribute("title", "contact - EMS");
 		System.out.println("contact page called....");
+		
 		return "contact";
 	}
 
 	@RequestMapping("/signup")
 	public String signup(Model model) {
-		model.addAttribute("title", "Register - Smart Contact Manager");
+		
+		model.addAttribute("title", "Register - EMS");
+		System.out.println("signup page called....");
 		model.addAttribute("user", new User());
 
-		System.out.println("signup page called....");
 		return "signup";
 	}
 
@@ -117,7 +123,7 @@ public class HomeController {
 	
 	@GetMapping("/signin")
 	public String  CustomLogin(Model model) {
-		model.addAttribute("title", "Login - Smart Contact Manager");
+		model.addAttribute("title", "Login - EMS");
 		
 		System.out.println("login page called....signin");
 		
