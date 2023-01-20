@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+<body>
+	<section>
+	<div id="login2">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="mycard mt-3">
+					  <div class="container text-center">
+					    <img alt="" style="width: 80px" th:src="@{/image/permission.png}">
+					    </div>
+						<h1 class="text-center">Login Here..!!</h1>
+
+						<form class="form-signin" method="post" th:action="@{/signin}" action="#">
+						
+						 <div th:if="${param.error}" class="alert alert-danger">
+                             invalid username and password
+                            </div>
+                            
+                            <div th:if="${param.logout}" class="alert alert-danger">
+                            logout
+                            </div>
+							<!--Name field   -->
+							<div class="form-group">
+								<label for="name">UserName</label>
+								<input type="text"
+								       class="form-control" 
+								       id="username" 
+								       name="username"
+									   aria-describedby="emailHelp"  
+									   placeholder="enter your email..." 
+									   required="required">
+						    </div>
+							
+						    <!--password field  -->
+						    <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" 
+                                       class="form-control" 
+                                       id="password"
+                                       name="password"
+                                       placeholder="enter your password..." 
+                                       required="required">
+                            </div>
+                            
+                            	<!--button field  -->
+                            <div class="container text-center">
+                            <button type="submit" class="btn bg-primary  text-white">Submit</button>
+                              
+                             <button type="reset"  class="btn btn-warning btn-block text-white">Reset </button> 
+                                
+                               <button> <a class="nav-link active" th:href="@{/signup/}">Register Here</a></button> 
+                           
+                            </div>
+                            
+                           
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</section>
+
+
+</body>
+</html>

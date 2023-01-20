@@ -14,7 +14,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
 
 import lombok.Data;
 import lombok.Getter;
@@ -41,7 +44,9 @@ public class User {
 	private String email;
 	
 	private String password;
-	private String gender;
+	//private String gender;
+	@Pattern(regexp =  "(0|91)?[6-9][0-9]{9}",message = "please enter valid mobile number")
+	//@Range(min = 10,max= 10, message = "mobile number should be exact 10 characters." )
 	private String mobile;
 	private String role;
 	private String imageUrl;
@@ -62,6 +67,9 @@ public class User {
 				+ mobile + ", role=" + role + ", imageUrl=" + imageUrl + ", enabled=" + enabled + ", about=" + about
 				+ ", contacts=" + contacts + "]";
 	}
+
+
+
 
 
 	
