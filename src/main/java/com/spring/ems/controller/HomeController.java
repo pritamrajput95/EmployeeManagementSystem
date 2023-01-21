@@ -121,13 +121,13 @@ public class HomeController {
 	}
 
 	
-	@GetMapping("/signin")
+	@GetMapping("/signin") 
 	public String  CustomLogin(Model model) {
 		model.addAttribute("title", "Login - EMS");
 		
 		System.out.println("login page called....signin");
 		
-		return "login2";
+		return "login";
 	}
 
 }
