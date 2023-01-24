@@ -35,11 +35,11 @@
 								       name="name" 
 								       class="form-control"
 								       th:classappend="${#fields.hasErrors('name')? 'is-invalid':'' }"
-								        id="name"
-									aria-describedby="emailHelp"
-									  placeholder="enter your name..." 
-									required="required"
-									 th:value="${user.name}"
+								       id="name"
+									   aria-describedby="emailHelp"
+									   placeholder="enter your name..." 
+									   required="required"
+								       th:value="${user.name}"
 									 
 									 />
 									 
@@ -83,7 +83,7 @@
 								       th:classappend="${#fields.hasErrors('mobile')? 'is-invalid':'' }" 
 								       id="mobile"
 									   aria-describedby="emailHelp"
-									   placeholder="enter your mobile"
+									   placeholder="enter your mobile..."
 									   required="required"  th:value="${user.mobile}">
 								
 								<!--server side validation  -->	
@@ -106,7 +106,7 @@
                             	    <!--about field  -->
 						    <div class="form-group">
                                <label for="about">Add Comment</label>
-                               <textarea placeholder="enter comment here..." rows="5"  name="about"
+                               <textarea  rows="5"  name="about" placeholder="enter comment here..."
                                   class="form-control" id="about"  th:value="${user.about}"> </textarea>
                                 
                             </div>

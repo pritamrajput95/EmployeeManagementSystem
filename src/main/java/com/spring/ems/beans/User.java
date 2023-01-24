@@ -45,9 +45,11 @@ public class User {
 	
 	private String password;
 	//private String gender;
+	
 	@Pattern(regexp =  "(0|91)?[6-9][0-9]{9}",message = "please enter valid mobile number")
 	//@Range(min = 10,max= 10, message = "mobile number should be exact 10 characters." )
 	private String mobile;
+	
 	private String role;
 	private String imageUrl;
 	private boolean enabled;

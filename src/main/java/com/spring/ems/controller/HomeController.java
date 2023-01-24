@@ -1,8 +1,11 @@
 package com.spring.ems.controller;
 
 import javax.servlet.http.HttpSession;
+
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -13,17 +16,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.apache.log4j.Logger;
-
 import com.spring.ems.beans.User;
 import com.spring.ems.helper.Message;
+import com.spring.ems.logger.GlobalLogger;
 import com.spring.ems.repository.UserRepository;
 
 @Controller
 public class HomeController {
 
-	private static final Logger LOGGER = Logger.getLogger(HomeController.class);
-
+    private static Logger logger=GlobalLogger.getLogger(HomeController.class);
+    
 	@Autowired
 	private BCryptPasswordEncoder passwardEncoder;
 	
@@ -34,7 +36,7 @@ public class HomeController {
 	public String home(Model model) {
 		model.addAttribute("title", "Home - EMS");
 		System.out.println("home page called....");
-       LOGGER.info("@@@@@@@@@@@@@@@@@@");
+		logger.info("+++++ home page called +++++++");
 		return "home";
 	}
 
@@ -42,7 +44,7 @@ public class HomeController {
 	public String about(Model model) {
 		model.addAttribute("title", "about - EMS");
 		System.out.println("about page called....");
-		
+		logger.info("+++++ about page called +++++++");
 		return "about";
 	}
 	
@@ -50,7 +52,7 @@ public class HomeController {
 	public String contact(Model model) {
 		model.addAttribute("title", "contact - EMS");
 		System.out.println("contact page called....");
-		
+		logger.info("+++++ contact page called +++++++");
 		return "contact";
 	}
 
@@ -60,7 +62,7 @@ public class HomeController {
 		model.addAttribute("title", "Register - EMS");
 		System.out.println("signup page called....");
 		model.addAttribute("user", new User());
-
+		logger.info("+++++ signup page called +++++++");
 		return "signup";
 	}
 
@@ -71,7 +73,7 @@ public class HomeController {
 	public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result1,
 			@RequestParam(value = "agreement", defaultValue = "false") boolean agreement, Model model,HttpSession session) 
 	{
-		
+	    logger.info("+++++ register page called +++++++");
 		System.out.println("register  page called...");
 		
 		try {
@@ -125,7 +127,8 @@ public class HomeController {
 	public String  CustomLogin(Model model) {
 		model.addAttribute("title", "Login - EMS");
 		
-		System.out.println("login page called....signin");
+		logger.info("+++++ signin page called +++++++");
+		System.out.println("signin page called....signin");
 		
 		return "login";
 	}
