@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+
+body {
+	
+	background: #e2e2e2 !important;
+}
+
+/*  for responsive page*/
+@media only screen and (max-width:600){
+	
+}
+
+.sidebar{
+	width: 18%;
+	background: black;
+	height: 100%;
+	position: fixed;
+    padding-top: 40px;
+}
+
+.sidebar a{
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: white;
+	
+}
+.sidebar a:hover{
+	background:#4D5957; 
+	color: red;
+    text-decoration: none;
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.sidebar .divider{
+	height: 3px;
+	width: 100%;
+	margin-top: 10px;
+	
+}
+
+.content{
+	margin-left: 20%;
+}
+
+
+.sidebar .crossBtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	cursor: pointer;
+}

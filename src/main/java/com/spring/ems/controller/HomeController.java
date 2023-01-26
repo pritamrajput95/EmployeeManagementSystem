@@ -74,13 +74,14 @@ public class HomeController {
 			@RequestParam(value = "agreement", defaultValue = "false") boolean agreement, Model model,HttpSession session) 
 	{
 	    logger.info("+++++ register page called +++++++");
-		System.out.println("register  page called...");
+		System.out.println("register page called...");
 		
 		try {
 			
 			if(!agreement) {
-				
-				throw new Exception(" you have not agreed the term and condition");
+		        logger.info("+++++  you have not agreed the term and condition +++++++");
+
+				//throw new Exception(" you have not agreed the term and condition");
 			}
 			
 			if(result1.hasErrors()) {

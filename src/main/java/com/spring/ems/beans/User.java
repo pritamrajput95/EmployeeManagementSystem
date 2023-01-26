@@ -43,6 +43,8 @@ public class User {
 	@NotBlank(message =  "email field should be mandatory")
 	private String email;
 	
+	@NotBlank(message =  "password cannot be empty")
+	 //  @Pattern(regexp =  "(0|91)?[6-9][0-9]{9}",message = "please enter valid password")
 	private String password;
 	//private String gender;
 	

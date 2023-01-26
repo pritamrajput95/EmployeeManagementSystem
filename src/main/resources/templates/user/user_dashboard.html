@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/"
-	>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org/"
+ th:replace="user/basepage::layout(~{::section})" >
+	
 <head>
 <meta charset="ISO-8859-1">
 <title>User DashbBoard</title>
 </head>
 <body>
-<section>
+<section >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<h1 align="center">Welcome to User DashbBoard</h1>
+<h2 align="center" >&nbsp;&nbsp;&nbsp;&nbsp;Welcome to User DashbBoard</h2>
 
-<h1 align="right">Name: <span th:text="${user.name}"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-<h1 align="right">Email: <span th:text="${user.email}"></span> </h1>
-<h2 align="right"><a  th:href="@{/logout}">logout here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
  
-<div align="center" >
-<img alt="laptop login image" th:src="@{/image/contact.jpg}" src="" width="80%" height="500px">
+<div align="center"  autofocus="autofocus">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+<img alt="laptop login image" th:src="@{/image/article_tablet.jpg}" src="" width="60%" height="40%">
 </div>
 
-<br><br>
-<hr><br>
+
     </section> 
 </body>
 </html>

@@ -84,7 +84,8 @@
 								       id="mobile"
 									   aria-describedby="emailHelp"
 									   placeholder="enter your mobile..."
-									   required="required"  th:value="${user.mobile}">
+									   required="required"  
+									   th:value="${user.mobile}">
 								
 								<!--server side validation  -->	
 								
@@ -98,9 +99,19 @@
 						    <!--password field  -->
 						    <div class="form-group">
                                 <label for="password">Your Password</label>
-                                <input type="password" name="password" class="form-control" id="password"
-                                    placeholder="enter your password..." required="required" 
+                                <input type="password" 
+                                       name="password" 
+                                       class="form-control" 
+                                       th:classappend="${#fields.hasErrors('password')? 'is-invalid':'' }" 
+                                       id="password"
+                                    placeholder="enter your password..." 
+                                    required="required" 
                                     th:value="${user.password}">
+                                    
+                                    <!--server side validation  -->	
+								
+								 <div  class="invalid-feedback" th:each="e:${#fields.errors('password')}"
+								  th:text='${e}'></div>
                             </div>
                             
                             	    <!--about field  -->
